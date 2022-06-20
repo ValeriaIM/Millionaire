@@ -107,10 +107,9 @@ function show(level) {
     document.getElementById('question-line').textContent = currentQuestion["question"];
     curAns = currentQuestion["answer"];
 
-    answerBox[0].childNodes[1].textContent = currentQuestion["variants"][0];
-    answerBox[1].childNodes[1].textContent = currentQuestion["variants"][1];
-    answerBox[2].childNodes[1].textContent = currentQuestion["variants"][2];
-    answerBox[3].childNodes[1].textContent = currentQuestion["variants"][3];
+    for (let i = 0; i < 4; i++) {
+        answerBox[i].childNodes[1].textContent = currentQuestion["variants"][i];
+    }
 
     if (level > 0) {
         setTimeout(() => {
@@ -297,7 +296,6 @@ function callToFriend(){
     timeout += 500;
 
 
-    //if 
     setTimeout(() => {
         text.innerHTML += `Мне кажется ответ ${maxKey}`;
     }, timeout);

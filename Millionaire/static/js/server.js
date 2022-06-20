@@ -1,10 +1,10 @@
 'use strict';
-var path = require('path');
-var express = require('express');
+let path = require('path');
+let express = require('express');
 
-var app = express();
+let app = express();
 
-var staticPath = path.join(__dirname, '/').slice(0, -3);
+let staticPath = path.join(__dirname, '/').slice(0, -3);
 app.use(express.static(staticPath));
 
 app.set('port', process.env.PORT || 3000);
